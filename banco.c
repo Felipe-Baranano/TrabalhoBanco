@@ -77,6 +77,7 @@ int cadastroCliente()
 
 int simemp(int escolaridade)
 {
+    int avancar;
     int nparcelas, vparcelas, taxa = 100, emp, emptotal = 0, pparcela = 0, pgparcela = 0;
 
     printf("\nBem vindo a simulação de emprestimos do banco Rotom.\n");
@@ -93,6 +94,20 @@ int simemp(int escolaridade)
     if (escolaridade == 2 || escolaridade == 3)
     {
         printf("Perfeito, nós temos uma pequena taxa de 100 reais por parcela, então o emprestimo de %d, vai ser pago em %d parcelas de %d, para um total de: %d.\n", emp, nparcelas, vparcelas, emptotal);
+        // confirmando o emprestimo
+        printf("Perfeito, agora que concluiu a simulação, gostaria de realizar o emprestimo? se sim, insira (1) \n");
+        scanf("%d", &avancar);
+
+        if (avancar == 1)
+        {
+            printf("Perfeito, o emprestimo foi realizado em um total de %d para ser pago em %d parcelas de %d.\n", emptotal, nparcelas, vparcelas);
+            return 0;
+        }
+        else
+        {
+            printf("Encerrando a simulação. Tenha um bom dia.\n");
+            return 0;
+        }
     }
 
     else if (escolaridade == 4)
@@ -101,7 +116,21 @@ int simemp(int escolaridade)
         pgparcela = pparcela + (vparcelas * (nparcelas - 1));
 
         printf("Perfeito, como você é Pós Graduado(a), temos um desconto de 100 reais na primeira parcela. nós temos uma pequena taxa de 100 reais por parcela, então o emprestimo de %d, vai ser pago em %d parcelas de %d, para um total de: %d.\n", emp, nparcelas, vparcelas, pgparcela);
-    };
+        // confirmando o emprestimo
+        printf("Perfeito, agora que concluiu a simulação, gostaria de realizar o emprestimo? se sim, insira (1) \n");
+        scanf("%d", &avancar);
+
+        if (avancar == 1)
+        {
+            printf("Perfeito, o emprestimo foi realizado em um total de %d para ser pago em %d parcelas de %d, Sendo a primeira parcela de: %d\n", pgparcela, nparcelas, vparcelas, pparcela);
+            return 0;
+        }
+        else
+        {
+            printf("Encerrando a simulação. Tenha um bom dia.\n");
+            return 0;
+        }
+    }
 
     return 0;
 }
