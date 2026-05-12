@@ -3,8 +3,7 @@ int simemp(void)
 {
     int escolaridade, nparcelas, vparcelas, taxa = 100, emp, emptotal = 0, pparcela = 0, pgparcela = 0;
 
-    // conferindo escolaridade
-    printf("\nBem vindo a simulação de emprestimos do banco Rotom."\n);
+    printf("\nBem vindo a simulação de emprestimos do banco Rotom.\n");
     printf("Quanto você planeja para o valor do emprestimo?\n");
     scanf("%d", &emp);
 
