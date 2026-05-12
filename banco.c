@@ -100,7 +100,11 @@ int simemp(int escolaridade)
 
         if (avancar == 1)
         {
-            printf("Perfeito, o emprestimo foi realizado em um total de %d para ser pago em %d parcelas de %d.\n", emptotal, nparcelas, vparcelas);
+            for (int i = 1; i <= nparcelas; i++)
+            {
+                printf("\n%dx | R$%d.00\n", i, vparcelas);
+            }
+            printf("\nPerfeito, o emprestimo foi realizado em um total de %d para ser pago em %d parcelas de %d.\n", emptotal, nparcelas, vparcelas);
             return 0;
         }
         else
@@ -122,6 +126,13 @@ int simemp(int escolaridade)
 
         if (avancar == 1)
         {
+            printf("\n1x | R$%d.00\n", pparcela);
+
+            for (int i = 2; i <= nparcelas; i++)
+            {
+                printf("\n%dx | R$%d.00\n", i, vparcelas);
+            }
+
             printf("Perfeito, o emprestimo foi realizado em um total de %d para ser pago em %d parcelas de %d, Sendo a primeira parcela de: %d\n", pgparcela, nparcelas, vparcelas, pparcela);
             return 0;
         }
